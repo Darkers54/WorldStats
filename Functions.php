@@ -75,10 +75,18 @@ function EconomyByContinent()
 }
 
 // LISTE DES PAYS
-function getCountryByName()
+function getCountryByName($pdo)
 {
 	//Remplir liste déroulante "PAYS"
 	$sql = 'SELECT DISTINCT(country.Name) FROM country;';
+	$pdoPrepare = $pdo->query($sql);
+	$ctryname = $pdoPrepare->fetchALL(PDO::FETCH_ASSOC);
+	//return $ctryname;
+	//mise en place foreach et balise option et affichage de la valeur de chaque ligne du tableau/array.
+	foreach ($ctryname as $cname)
+	{
+		echo '<option value ="' .$cname['Name']. '">'.$cname['Name'].'</option>';
+	}
 } 
 
 //PARTIE PAYS
