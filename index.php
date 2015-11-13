@@ -33,7 +33,7 @@ require('Functions.php');
 
  		</div>
  	</article>
-
+<!-- JQUERY -->
  	<script>
  		$('#conti').change(function(){
  			$('#myform').submit();
