@@ -30,7 +30,7 @@ require('Functions.php');
  			<select name="lands" >
  				<option> Pays </option>
  			<?php 
- 				//on appelle la fonction et l'operation foreach 
+ 				//on appelle la fonction et donc l'operation foreach 
  				getCountryByName($pdo);
  			?>		
  			</select><!--<?php //print_r($nompays); verif EN DEHORS DE SELECT ?>-->
