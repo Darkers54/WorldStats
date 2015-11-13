@@ -14,6 +14,30 @@ require('Functions.php');
  	<link rel="stylesheet" href="styles.css" type="text/css">
  </head>
  <body>
- 	
+ 	<article>
+ 	<form action="#" method="get" accept-charset="utf-8" id="myform">
+ 		<select name="continent" id="conti" >
+ 			<option value="-1">Continent</option>
+				<?php 
+					$continent = getContinentByName($pdo);
+					foreach($continent as $ct) : ?>
+						<option value="<?php echo $ct['Continent']; ?>">
+						<?php echo $ct['Continent']; ?>
+						</option>
+					<?php endforeach; ?>
+ 		</select>
+ 	</form>
+
+ 		<div>
+ 			<?php ?>
+
+ 		</div>
+ 	</article>
+
+ 	<script>
+ 		$('#conti').change(function(){
+ 			$('#myform').submit();
+ 		});
+ 	</script>
  </body>
  </html>

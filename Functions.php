@@ -41,10 +41,13 @@ function getNbMonarchiesNCAsia()
 }
 
 // LISTE DES CONTINENTS
-function getContinentByName()
+function getContinentByName($pdo)
 {
 	//Remplir liste déroulante "CONTINENT"
 	$sql = 'SELECT DISTINCT(country.Continent) FROM country;';
+	$pdoPrepare = $pdo->query($sql);
+	$contiName = $pdoPrepare->fetchAll(PDO::FETCH_ASSOC);
+	return $contiName;
 }
 
 //PARTIE CONTINENT
